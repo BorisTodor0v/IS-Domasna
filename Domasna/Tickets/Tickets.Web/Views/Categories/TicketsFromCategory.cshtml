@@ -1,0 +1,73 @@
+﻿@inject UserManager<Tickets.Domain.Identity.AppUser> userManager
+@model List<Ticket>
+@{
+    ViewData["Title"] = "TicketsFromCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>@ViewBag.CategoryName</h1>
+
+@if (Model.Any())
+{   
+    <div class="container">
+        <table class="table">
+            <thead class="table-light">
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ticket in Model)
+                {
+                    <tr>
+                        <td>@ticket.Title</td>
+                        <td>@ticket.Description</td>
+                        <td>@ticket.Price мкд</td>
+                        <td>@ticket.date.ToShortDateString()</td>
+                        <td>
+                            @{
+                                if (User.Identity.IsAuthenticated)
+                                {
+                                    <a class="btn btn-success" asp-controller="Tickets" asp-action="AddToCart" asp-route-id="@ticket.ID">Add to Cart</a>
+                                }
+                            }
+                            <a class="btn btn-info" asp-controller="Tickets" asp-action="Details" asp-route-id="@ticket.ID">Details</a>
+                            @{
+                                var user1 = await userManager.GetUserAsync(User);
+                                
+                                if (User.Identity.IsAuthenticated)
+                                {
+                                    var role = user1.Role;
+                                    if (role == "Administrator")
+                                    {
+                                        <a class="btn btn-outline-primary" asp-controller="Tickets" asp-action="Edit" asp-route-id="@ticket.ID">Edit</a>
+                                        <a class="btn btn-danger" asp-controller="Tickets" asp-action="Delete" asp-route-id="@ticket.ID">Delete</a>
+                                    }
+                                    
+                                }
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+        var user = await userManager.GetUserAsync(User);
+        if (User.Identity.IsAuthenticated && user.Role == "Administrator")
+        {
+            <div>
+                <a class="btn btn-info" asp-action="ExportTicketsToExcel" asp-route-categoryId="@ViewBag.CategoryId">Export To Excel</a>
+            </div>
+        }
+        
+}
+else
+{
+    <p>No tickets found in this category.</p>
+}

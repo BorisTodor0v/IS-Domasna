@@ -1,0 +1,12 @@
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\bin\Debug\net6.0\Tickets.Domain.deps.json
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\bin\Debug\net6.0\Tickets.Domain.dll
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\bin\Debug\net6.0\Tickets.Domain.pdb
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\Tickets.Domain.csproj.AssemblyReference.cache
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\Tickets.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\Tickets.Domain.AssemblyInfoInputs.cache
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\Tickets.Domain.AssemblyInfo.cs
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\Tickets.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\Tickets.Domain.dll
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\refint\Tickets.Domain.dll
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\Tickets.Domain.pdb
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Domain\obj\Debug\net6.0\ref\Tickets.Domain.dll

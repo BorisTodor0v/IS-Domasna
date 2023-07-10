@@ -1,0 +1,42 @@
+﻿@using Tickets.Domain.Identity;
+@inject UserManager<AppUser> UserManager
+@model IEnumerable<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User List</h2>
+<hr />
+
+<div class="container">
+    <table class="table">
+        <thead class="table-light">
+            <tr>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var userManager = await UserManager.GetUserAsync(User);
+
+                foreach(var user in Model)
+                {
+                    <tr>
+                        <td>@user.Email</td>
+                        <td>@user.Role</td>
+                        <td>
+                            @if (User.Identity.IsAuthenticated && userManager.Role == "Administrator")
+                            {
+                                <a class="btn btn-outline-primary" asp-controller="User" asp-action="Edit" asp-route-id="@user.Id">Edit</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

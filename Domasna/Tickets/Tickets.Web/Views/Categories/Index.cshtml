@@ -1,0 +1,35 @@
+﻿@using Tickets.Domain.DomainModels;
+@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Categories</h1>
+<div class="container">
+    <table class="table">
+        <thead class="table-light">
+            <tr>
+                <th>#</th>
+                <th>Category</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var counter = 1;
+                foreach (var category in Model)
+                {
+                    <tr>
+                        <td>@counter</td>
+                        <td>@category.Name</td>
+                        <td><a class="btn btn-info" asp-asp-controller="Categories" asp-action="TicketsFromCategory" asp-route-CategoryId="@category.ID">Tickets from @category.Name</a></td>
+                    </tr>
+                    counter++;
+                }
+            }
+        </tbody>
+    </table>
+    <div>
+        <a class="btn btn-primary" asp-controller="Categories" asp-action="Create">Add Category</a>
+    </div>
+</div>

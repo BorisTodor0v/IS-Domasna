@@ -1,0 +1,17 @@
+Accounts:
+
+Email	admin@admin.com
+Pass	Adm1n.
+Role	Administrator
+
+Email	backup@admin.com
+Pass	Adm1n.
+Role	Administrator
+
+Email	test@user1.com
+Pass	Testuser5.
+Role	Standard User
+
+Email	test@user2.com
+Pass	Testuser5.
+Role	Standard User

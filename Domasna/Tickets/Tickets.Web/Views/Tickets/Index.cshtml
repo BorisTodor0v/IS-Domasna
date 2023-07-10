@@ -1,0 +1,99 @@
+﻿@using Tickets.Domain.Identity;
+@inject UserManager<AppUser> userManager
+@model IEnumerable<Tickets.Domain.DomainModels.Ticket>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Tickets</h1>
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+<div class="container">
+
+    <form method="get" action="@Url.Action("Index")">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Filter by Date:</label>
+            <div class="col-sm-4">
+                <input type="date" name="selectedDate" class="form-control" value="@ViewBag.SelectedDate?.ToString("yyyy-MM-dd")" />
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary">Apply</button>
+            </div>
+            <div class="col-sm-2">
+                <a class="btn btn-secondary" asp-controller="Tickets" asp-action="Index">Show all Tickets</a>
+            </div>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <th>
+                        @{
+                            var date = item.date.Date.ToShortDateString();
+                        }
+                        @date
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price) мкд
+                    </td>
+                    <td>
+                        @{
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <a class="btn btn-success" asp-controller="Tickets" asp-action="AddToCart" asp-route-id="@item.ID">Add to Cart</a> 
+                            }
+                        }
+                        <a class="btn btn-info" asp-controller="Tickets" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                        @{
+                            var user = await userManager.GetUserAsync(User);
+                            
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                var role = user.Role;
+                                if(role == "Administrator")
+                                {
+                                    <a class="btn btn-outline-primary" asp-controller="Tickets" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                                    <a class="btn btn-danger" asp-controller="Tickets" asp-action="Delete" asp-route-id="@item.ID">Delete</a>    
+                                }
+                                
+                            }
+                        }                       
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

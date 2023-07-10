@@ -1,0 +1,17 @@
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\bin\Debug\net6.0\Tickets.Services.deps.json
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\bin\Debug\net6.0\Tickets.Services.dll
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\bin\Debug\net6.0\Tickets.Services.pdb
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\bin\Debug\net6.0\Tickets.Domain.dll
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\bin\Debug\net6.0\Tickets.Repository.dll
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\bin\Debug\net6.0\Tickets.Domain.pdb
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\bin\Debug\net6.0\Tickets.Repository.pdb
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\Tickets.Services.csproj.AssemblyReference.cache
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\Tickets.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\Tickets.Services.AssemblyInfoInputs.cache
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\Tickets.Services.AssemblyInfo.cs
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\Tickets.Services.csproj.CoreCompileInputs.cache
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\Tickets.Services.csproj.CopyComplete
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\Tickets.Services.dll
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\refint\Tickets.Services.dll
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\Tickets.Services.pdb
+C:\Users\Ivan Todorov\Desktop\IS Domasna\Domasna\Tickets\Tickets.Service\obj\Debug\net6.0\ref\Tickets.Services.dll

@@ -1,0 +1,63 @@
+﻿@model Tickets.Domain.DTO.CartDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Cart</h1>
+<div class="container">
+    
+    <div class="row m-4">
+        @{
+            if (Model.Tickets.Count != 0)
+            {
+                <a asp-controller="Cart" asp-action="Order" class="btn btn-info">Order Now</a>
+            }
+        }
+    </div>
+    <table class="table">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ticket</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.Tickets.Count == 0)
+                {
+                    <tr>
+                        <td colspan="5">Your cart is currently empty</td>
+                    </tr>
+                } else {
+                    int counter = 1;
+                    foreach (var ticket in Model.Tickets)
+                    {
+
+                        <tr>
+                            <td scope="row">@counter</td>
+                            <td scope ="row">@ticket.Ticket.Title</td>
+                            <td scope="row">@ticket.quantity</td>
+                            <td scope="row">@ticket.Ticket.Price мкд</td>
+                            <td scope="row">
+                                <a class="btn btn-danger" asp-controller="Cart" asp-action="Delete" asp-route-id="@ticket.TicketID">Delete</a>
+                            </td>
+                        </tr>
+                        counter++;
+                    }
+                }
+            }
+        </tbody>
+        <tfoot class="table-light">
+            <tr>
+                <th scope="col">Total:</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">@Model.TotalPrice мкд</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

@@ -1,0 +1,41 @@
+﻿@model Tickets.Domain.DTO.OrderDto
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Order details</h1>
+<hr />
+<div class="container">
+    <table class="table">
+        <thead class="table-light">
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+        </thead>
+        <tbody>
+            @{
+                int counter = 1;
+                foreach(var item in Model.OrderItems)
+                {
+                    <tr>
+                        <td scope="row">@counter</td>
+                        <td scope="row">@item.OrderedTicket.Title</td>
+                        <td scope="row">@item.quantity</td>
+                        <td scope="row">@item.OrderedTicket.Price мкд</td>
+                    </tr>
+                    counter++;
+                }
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Total:</th>
+                <th scope="col">@Model.TotalPrice</th>
+            </tr>
+        </tfoot>
+    </table>
+    <a class="btn btn-info" asp-action="Index">Back</a>
+</div>

@@ -1,0 +1,46 @@
+﻿@using Tickets.Domain.DomainModels;
+@model List<Order>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your past orders</h2>
+<hr />
+
+<div>
+	<table class="table">
+		<thead class="table-light">
+			<tr>
+				<th>Order ID</th>
+				<th>Number of items</th>
+				<th>Total price</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@{
+				var price = 0;
+				foreach(var order in Model)
+				{
+					foreach(var item in order.OrderItems)
+					{
+						price += item.OrderedTicket.Price * item.quantity;
+					}
+					<tr>
+						<td>@order.ID</td>
+						<td>@order.OrderItems.Count()</td>
+						<td>@price мкд</td>
+						<td>
+							<a class="btn btn-info" asp-controller="Order" asp-action="Details" asp-route-orderId="@order.ID">Details</a>
+						</td>
+					</tr>
+					price = 0;
+				}
+			}
+		</tbody>
+	</table>
+	<div>
+		<a class="btn btn-success" href="@Url.Action("ExportOrders", "Order")">Export Orders</a>
+	</div>
+</div>
